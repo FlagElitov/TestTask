@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "./assest/Loading";
 import ButtonAppBar from "./components/Navigation/Navigation";
+import SimpleMenu from "./components/PopubState/PopubState";
 import RouteList from "./components/Route/Route";
 import { itemsRequestAC } from "./redux/action/RouteAction";
 
@@ -19,6 +20,9 @@ const App = () => {
       <div className="container">
         {route.loading && <Loading />}
         {route.fail && "Faile connected"}
+        <div>
+          <SimpleMenu />
+        </div>
         <div className="menu">
           <div className="menu__items">Час отправки</div>
           <div className="menu__items">Название</div>
