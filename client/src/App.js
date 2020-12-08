@@ -11,22 +11,30 @@ const App = () => {
   React.useEffect(() => {
     dispatch(itemsRequestAC());
   }, []);
+
+  console.log(route.items);
   return (
     <div className="App">
       <ButtonAppBar />
       <div className="container">
         {route.loading && <Loading />}
         {route.fail && "Faile connected"}
+        <div className="menu">
+          <div className="menu__items">Час отправки</div>
+          <div className="menu__items">Название</div>
+          <div className="menu__items">Час прибития</div>
+        </div>
         {route.items &&
-          route.items.map((route, index) => {
+          route.items.map((route, index) => (
             <div className="route" key={index}>
               <RouteList
+                id={route._id}
                 name={route.name}
                 arrivalHour={route.arrivalHour}
                 sendingTime={route.sendingTime}
               />
-            </div>;
-          })}
+            </div>
+          ))}
       </div>
     </div>
   );
