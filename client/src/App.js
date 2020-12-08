@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "./assest/Loading";
-import Autocomplete from "./components/AutocompleteGoogle/Autocomplete";
+
+import GoogleAutocomplete from "./components/GoogleAutocomplete/GoogleAutocomplete";
 import ButtonAppBar from "./components/Navigation/Navigation";
 import SimpleMenu from "./components/PopubState/PopubState";
 import RouteList from "./components/Route/Route";
@@ -22,7 +23,7 @@ const App = () => {
         {route.loading && <Loading />}
         {route.fail && "Faile connected"}
         <div className="sort">
-          <Autocomplete />
+          <GoogleAutocomplete />
           <SimpleMenu />
         </div>
         <div className="menu">
