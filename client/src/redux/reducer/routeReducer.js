@@ -37,12 +37,12 @@ const RouteReducer = (state = initialState, action) => {
     case SORT_ARRIVAL_HOUR:
       return {
         ...state,
-        items: state.items.sort((a, b) => b.name - a.name),
+        items: state.items.sort((a, b) => a.arrivalHour - b.arrivalHour),
       };
     case SORT_SENDING_HOUR:
       return {
         ...state,
-        items: state.items.sort((a, b) => b.sendingTime - a.sendingTime),
+        items: state.items.sort((a, b) => a.sendingTime - b.sendingTime),
       };
 
     default:

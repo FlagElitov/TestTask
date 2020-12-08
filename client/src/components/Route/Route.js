@@ -3,9 +3,9 @@ import React from "react";
 const RouteList = ({ name, arrivalHour, sendingTime }) => {
   return (
     <>
-      <div>{sendingTime}</div>
+      <div>{sendingTime} год</div>
       <div>{name}</div>
-      <div>{arrivalHour}</div>
+      <div>{arrivalHour} год</div>
     </>
   );
 };
