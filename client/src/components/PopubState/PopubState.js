@@ -2,16 +2,30 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import { useDispatch } from "react-redux";
+import {
+  itemsSortArrivalAC,
+  itemsSortSendingAC,
+} from "../../redux/action/RouteAction";
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
+  const dispatch = useDispatch();
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const handleSortSend = () => {
+    dispatch(itemsSortSendingAC());
+    setAnchorEl(null);
+  };
+  const handleSortArrival = () => {
+    setAnchorEl(null);
+    dispatch(itemsSortArrivalAC());
   };
 
   return (
@@ -30,8 +44,8 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>По отправке</MenuItem>
-        <MenuItem onClick={handleClose}>По прибиванию</MenuItem>
+        <MenuItem onClick={handleSortSend}>По отправке</MenuItem>
+        <MenuItem onClick={handleSortArrival}>По прибиванию</MenuItem>
       </Menu>
     </div>
   );

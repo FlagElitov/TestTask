@@ -8,11 +8,11 @@ const RouteSchema = new Schema({
     required: true,
   },
   arrivalHour: {
-    type: String,
+    type: Number,
     required: true,
   },
   sendingTime: {
-    type: String,
+    type: Number,
     required: true,
   },
 });

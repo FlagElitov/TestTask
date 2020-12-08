@@ -2,6 +2,8 @@ import {
   ROUTE_FAIL,
   ROUTE_LOADING,
   ROUTE_SUCCESS,
+  SORT_ARRIVAL_HOUR,
+  SORT_SENDING_HOUR,
 } from "../action/RouteAction";
 
 const initialState = {
@@ -32,16 +34,16 @@ const RouteReducer = (state = initialState, action) => {
         loading: false,
         items: action.payload,
       };
-    // case SORT_PRICE:
-    //   return {
-    //     ...state,
-    //     items: state.items!.sort((a, b) => b.price - a.price),
-    //   };
-    // case SORT_RATING:
-    //   return {
-    //     ...state,
-    //     items: state.items!.sort((a, b) => b.rating - a.rating),
-    //   };
+    case SORT_ARRIVAL_HOUR:
+      return {
+        ...state,
+        items: state.items.sort((a, b) => b.name - a.name),
+      };
+    case SORT_SENDING_HOUR:
+      return {
+        ...state,
+        items: state.items.sort((a, b) => b.sendingTime - a.sendingTime),
+      };
 
     default:
       return state;
