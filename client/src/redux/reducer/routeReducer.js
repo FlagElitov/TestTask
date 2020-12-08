@@ -1,4 +1,3 @@
-import { SORT_PRICE, SORT_RATING } from "./../action/ItemsAction";
 import {
   ROUTE_FAIL,
   ROUTE_LOADING,
