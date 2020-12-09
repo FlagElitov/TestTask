@@ -33,6 +33,14 @@ code {
   .sort {
     display: flex;
   }
+
+  .input-suggestion {
+    margin-top: 10px;
+    width: 500px;
+    height: 50px;
+    background-color: white;
+    border: 1px yellow solid;
+  }
   .autocomplete {
     padding: 10px 40px;
     margin: 0 auto;
