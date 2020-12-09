@@ -1,16 +1,16 @@
 # TestTask
-1yarn
+1 yarn
 
-2cd client
+2 cd client
 
-3yarn
+3 yarn
 
-4cd ..
+4 cd ..
 
-5cd server
+5 cd server
 
-6yarn
+6 yarn
 
-7cd ..
+7 cd ..
 
-8yarn full
+8 yarn full
