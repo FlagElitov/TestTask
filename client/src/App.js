@@ -23,8 +23,12 @@ const App = () => {
         {route.loading && <Loading />}
         {route.fail && "Faile connected"}
         <div className="sort">
-          <GoogleAutocomplete />
-          <SimpleMenu />
+          <div className="autocomplete">
+            <GoogleAutocomplete />
+          </div>
+          <div>
+            <SimpleMenu />
+          </div>
         </div>
         <div className="menu">
           <div className="menu__items">Час отправки</div>

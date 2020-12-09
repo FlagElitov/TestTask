@@ -33,7 +33,7 @@ class LocationSearchInput extends React.Component {
             <input
               {...getInputProps({
                 placeholder: "Нужна полная регестрация",
-                className: "location-search-input",
+                className: "autocomplete",
               })}
             />
 
