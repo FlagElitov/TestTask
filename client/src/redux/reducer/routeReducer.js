@@ -9,7 +9,7 @@ import {
 const initialState = {
   loading: false,
   faile: false,
-  items: null,
+  items: [],
 };
 
 const RouteReducer = (state = initialState, action) => {
