@@ -40,7 +40,6 @@ const App = () => {
 
         <div className="sort">
           <div className="autocomplete">
-            <GoogleAutocomplete />
             <Input setNumber={setNumber} />
           </div>
           <div>

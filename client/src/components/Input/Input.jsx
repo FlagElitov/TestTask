@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(1),
-      width: "25ch",
+      width: "39ch",
     },
   },
 }));
@@ -18,6 +18,7 @@ const Input = ({ setNumber }) => {
     <form className={classes.root} noValidate autoComplete="off">
       <TextField
         id="standard-basic"
+        placeholder="Введите время отправки,прибытие,назву"
         onChange={(e) => setNumber(e.target.value)}
         label="Material UI Input"
       />
