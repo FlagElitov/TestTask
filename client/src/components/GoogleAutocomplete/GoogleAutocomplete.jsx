@@ -32,7 +32,7 @@ class LocationSearchInput extends React.Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: "Нужна полная регестрация",
+                placeholder: "Введите путь",
                 className: "autocomplete",
               })}
             />
@@ -52,9 +52,9 @@ class LocationSearchInput extends React.Component {
                   : { backgroundColor: "#ffffff", cursor: "pointer" };
 
                 return (
-                  <div className="input-suggestion"
+                  <div
+                    className="input-suggestion"
                     {...getSuggestionItemProps(suggestion, {
-                      
                       style,
                     })}
                   >
