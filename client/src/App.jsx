@@ -9,6 +9,7 @@ import SimpleMenu from "./components/PopubState/PopubState";
 import RouteList from "./components/Route/Route";
 import { itemsRequestAC } from "./redux/action/RouteAction";
 import Input from "./components/Input/Input";
+import Autocomplete from "./components/Autocomplete/Autocomplete";
 
 const App = () => {
   const route = useSelector((state) => state.route);
@@ -28,9 +29,7 @@ const App = () => {
   React.useEffect(() => {
     dispatch(itemsRequestAC());
   }, []);
-  console.log(data, "data");
-  console.log(route.items);
-  console.log(data.length);
+
   return (
     <div className="App">
       <ButtonAppBar />
@@ -40,8 +39,7 @@ const App = () => {
 
         <div className="sort">
           <div className="autocomplete">
-            <GoogleAutocomplete />
-            <Input setNumber={setNumber} />
+            <Autocomplete data={data} setNumber={setNumber} number={number} />
           </div>
           <div>
             <SimpleMenu />
