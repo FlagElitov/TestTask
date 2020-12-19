@@ -8,7 +8,10 @@ const Route = require("../../models/Route");
 //Get
 router.get("/", async (req, res) => {
   try {
-    const route = await Route.find();
+    const route = await Route.find({}, { description: 1, _id: 1 }).sort({
+      description: 1,
+    });
+
     if (!route) throw Error("Error find route");
     res.status(200).json(route);
   } catch (err) {
