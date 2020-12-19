@@ -3,16 +3,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const RouteSchema = new Schema({
-  name: {
+  description: {
     type: String,
-    required: true,
-  },
-  arrivalHour: {
-    type: Number,
-    required: true,
-  },
-  sendingTime: {
-    type: Number,
     required: true,
   },
 });
