@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-// Post models
 
+// Post models
 const Route = require("../../models/Route");
 
 //Rest API
@@ -15,9 +15,9 @@ router.get("/", async (req, res) => {
     res.status(400).json({ msg: err });
   }
 });
+//Post
 router.post("/", async (req, res) => {
   const newRoute = new Route(req.body);
-
   try {
     const route = await newRoute.save();
     if (!route) throw Error("Error saving route");
@@ -26,7 +26,6 @@ router.post("/", async (req, res) => {
   } catch (err) {
     res.status(400).json({ msg: err });
   }
-  console.log(req.body);
 });
 
 module.exports = router;

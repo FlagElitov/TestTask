@@ -3,8 +3,11 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
+import { routePostAC } from "../../redux/action/RouteAction";
+import Google from "./GoogleAutocomplete";
+import { connect } from "react-redux";
 
-class LocationSearchInput extends React.Component {
+class GoogleAutocomplete extends React.Component {
   constructor(props) {
     super(props);
     this.state = { address: "" };
@@ -22,6 +25,8 @@ class LocationSearchInput extends React.Component {
   };
 
   render() {
+    const { route, routePostAC } = this.props;
+    console.log(this.props);
     return (
       <PlacesAutocomplete
         value={this.state.address}
@@ -40,8 +45,8 @@ class LocationSearchInput extends React.Component {
             <div className="autocomplete-dropdown-container">
               {loading && <div>Loading...</div>}
 
-              {suggestions.map((suggestion) => {
-                console.log(suggestions);
+              {suggestions.map((suggestion, index) => {
+                console.log(suggestions, "Flag " + index);
                 const className = suggestion.active
                   ? "suggestion-item--active"
                   : "suggestion-item";
@@ -53,12 +58,15 @@ class LocationSearchInput extends React.Component {
 
                 return (
                   <div
+                    key={index}
                     className="input-suggestion"
                     {...getSuggestionItemProps(suggestion, {
                       style,
                     })}
                   >
-                    <span>{suggestion.description}</span>
+                    <span onClick={() => routePostAC(suggestion)}>
+                      {suggestion.description}
+                    </span>
                   </div>
                 );
               })}
@@ -70,4 +78,8 @@ class LocationSearchInput extends React.Component {
   }
 }
 
-export default LocationSearchInput;
+const mapStateToProps = (state) => ({
+  route: state.route,
+});
+
+export default connect(mapStateToProps, { routePostAC })(GoogleAutocomplete);

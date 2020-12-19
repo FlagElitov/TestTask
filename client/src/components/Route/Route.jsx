@@ -1,11 +1,9 @@
 import React from "react";
 
-const RouteList = ({ name, arrivalHour, sendingTime }) => {
+const RouteList = ({ description }) => {
   return (
     <>
-      <div>{sendingTime} год</div>
-      <div>{name}</div>
-      <div>{arrivalHour} год</div>
+      <div className="route__center">{description}</div>
     </>
   );
 };
